@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://jonahunuafe.github.io/place-picker-app",
+  "homepage": "http://{jonahunuafe}.github.io/{place-picker-app}",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
