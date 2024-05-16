@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Places from "./components/Places";
 import Modal from "./components/Modal.jsx";
 import DeleteConfirmation from "./components/DeleteConfirmation.jsx";
+import logoImg from './assets/logo.png';
 import { AVAILABLE_PLACES } from './data.js';
 import { sortPlacesByDistance } from "./loc.js";
 
@@ -77,6 +78,17 @@ export default function App() {
           onConfirm={handleRemovePlace}
         />
       </Modal>
+
+      <header>
+        <img src={logoImg} alt="Stylized globe" />
+        <h1>PlacePicker</h1>
+        <p>
+          Create your personal collection of places you would like to visit or
+          you have visited.
+        </p>
+      </header>
+
+
 
       <main>
         <Places
