@@ -19,8 +19,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  /* padding: 2rem; */
   background: linear-gradient(180deg, #1f1c2c 0%, #1f1c2c 100%);
+}
+
+html, body {
+   overflow-x: hidden;
 }
 
 header {
@@ -248,7 +251,6 @@ header p {
       font-size: 1rem;
    }
 
-    
    .places {
       display: grid;
       grid-template-columns: 1fr;
