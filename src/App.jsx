@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Places from "./components/Places";
 import Modal from "./components/Modal.jsx";
+import DeleteConfirmation from "./components/DeleteConfirmation.jsx";
 import { AVAILABLE_PLACES } from './data.js';
 import { sortPlacesByDistance } from "./loc.js";
 
@@ -27,6 +28,15 @@ export default function App() {
       setAvailablePlaces(sortedPlaces);
     });
   }, []);
+
+  function handleStartRemovePlace(id) {
+    setModalIsOpen(true);
+    selectedPlace.current = id;
+  }
+
+  function handleStopRemovePlace() {
+    setModalIsOpen(false);
+  }
 
   function handleSelectPlace(id) {
     setPickedPlaces((prevPickedPlaces) => {
@@ -61,8 +71,11 @@ export default function App() {
 
   return (
     <>
-      <Modal open={modalIsOpen}>
-        
+      <Modal open={modalIsOpen} onClose={handleStopRemovePlace}>
+        <DeleteConfirmation
+          onCancel={handleStopRemovePlace}
+          onConfirm={handleRemovePlace}
+        />
       </Modal>
 
       <main>
@@ -70,6 +83,7 @@ export default function App() {
           title="I'd like to visit ..."
           fallbackText={'Select the places you would like to visit below.'}
           places={pickedPlaces}
+          onSelectPlace={handleStartRemovePlace}
         />
         <Places
           title="Available Places"
