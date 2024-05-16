@@ -18,7 +18,8 @@ html {
 
 body {
   margin: 0;
-  padding: 2rem;
+  padding: 0;
+  /* padding: 2rem; */
   background: linear-gradient(180deg, #1f1c2c 0%, #1f1c2c 100%);
 }
 
@@ -27,6 +28,7 @@ header {
 }
  
 header img {
+   margin-top: 2rem;
    width: 5rem;
    height: 5rem;
    object-fit: contain;
@@ -34,23 +36,22 @@ header img {
 }
  
 header h1 {
-   margin: 0;
+   margin: 1rem;
    font-size: 3rem;
    text-transform: uppercase;
    letter-spacing: 1rem;
 }
  
 header p {
-   margin: 0 auto;
+   margin: 1rem auto;
    font-size: 1.15rem;
    max-width: 38ch;
    color: #9eb5b4;
 }
  
-
 .places-category {
-   max-width: 85rem;
-   margin: 2rem auto;
+   max-width: 90%;
+   margin: auto;
    padding: 1rem;
    border: 2px solid #0d373e;
    border-radius: 8px;
@@ -195,7 +196,7 @@ header p {
 }
  
 .modal {
-   min-width: 30rem;;
+   min-width: 30rem;
    padding: 0;
    z-index: 2;
    background: #d5c7bc;
@@ -223,5 +224,46 @@ header p {
    to {
      opacity: 1;
      transform: translateY(0);
+   }
+}
+
+@media(max-width: 768px) {  
+   header img {
+      margin-top: 3rem;
+      width: 3rem;
+      height: 3rem;
+   }
+    
+   header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 0.5rem;
+   }
+    
+   header p {
+      margin: 1.5rem auto;
+      font-size: 1rem;
+   }
+    
+   .places-category h2 {
+      font-size: 1rem;
+   }
+
+    
+   .places {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+   }
+    
+   .place-item h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: normal;
+      font-size: 0.9rem;
+      position: absolute;
+      bottom: 0;
+   }   
+    
+   .modal {
+      min-width: 10rem;
    }
 }

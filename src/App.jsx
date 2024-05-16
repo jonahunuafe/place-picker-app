@@ -87,9 +87,7 @@ export default function App() {
           you have visited.
         </p>
       </header>
-
-
-
+      
       <main>
         <Places
           title="I'd like to visit ..."
