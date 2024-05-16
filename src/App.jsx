@@ -1,8 +1,11 @@
 // import React from 'react'
+import Places from "./components/Places";
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <Places />
+    </div>
   )
 }
 
