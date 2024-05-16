@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Places from "./components/Places";
+import Modal from "./components/Modal.jsx";
 import { AVAILABLE_PLACES } from './data.js';
 import { sortPlacesByDistance } from "./loc.js";
 
@@ -10,6 +11,8 @@ const storedPlaces = storedIds.map((id) =>
 );
 
 export default function App() {
+  const selectedPlace = useRef();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [availablePlaces, setAvailablePlaces] = useState([]);
   const [pickedPlaces, setPickedPlaces] = useState(storedPlaces);
 
@@ -43,8 +46,25 @@ export default function App() {
     }
   }
 
+  const handleRemovePlace = useCallback(function handleRemovePlace() {
+    setPickedPlaces((prevPickedPlaces) =>
+      prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
+    );
+    setModalIsOpen(false);
+
+    const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
+    localStorage.setItem(
+      "selectedPlaces", 
+      JSON.stringify(storedIds.filter((id) => id !== selectedPlace.current))
+    );
+  }, []);
+
   return (
     <>
+      <Modal open={modalIsOpen}>
+        
+      </Modal>
+
       <main>
         <Places
           title="I'd like to visit ..."
