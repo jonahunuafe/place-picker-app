@@ -22,10 +22,6 @@ body {
   background: linear-gradient(180deg, #1f1c2c 0%, #1f1c2c 100%);
 }
 
-html, body {
-   overflow-x: hidden;
-}
-
 header {
    text-align: center;
 }
