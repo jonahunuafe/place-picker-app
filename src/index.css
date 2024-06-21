@@ -1,3 +1,8 @@
+:root {
+    --color-1: #B7B597; 
+    /* --color-1: #222831;  */
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,6 +10,11 @@
 body {
     margin: 0;
     padding: 0;
+    background: var(--color-1);
+}
+
+body, html {
+    overflow-x: hidden;
 }
 
 header {
@@ -24,19 +34,45 @@ header img {
 .places-category {
     width: 90%;
     margin: auto;
+    background: var(--color-1);;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #4F6F52;
 }
 
 .places {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
     padding-left: 0rem !important;
+    
+
 }
 
 .place-item {
     list-style: none;
+    border-radius: 1rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.place-item button {
+    background: var(--color-1);;
+    border: none;
+}
+
+.place-item h3 {
+    background: yellow;
+    width: max-content;
+    margin: auto;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
 }
 
 .place-item img {
-    width: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
+   
 }
