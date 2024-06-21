@@ -1,7 +1,6 @@
-:root {
+/* :root {
     --color-1: #B7B597; 
-    /* --color-1: #222831;  */
-}
+} */
 
 * {
     box-sizing: border-box;
@@ -40,6 +39,16 @@ header {
     text-align: center;
 }
 
+header h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+header p {
+    max-width: 38ch; 
+    color: #9eb5b4;
+}
+
 header img {
     width: 10%;
     object-fit: contain;
@@ -53,7 +62,20 @@ header img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #4F6F52;
+    /* border: 2px solid #4F6F52; */
+    padding: 1rem;
+    border: 2px solid #0d373e;
+    border-radius: 8px;
+}
+
+.places-category h2 {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 1rem;
+    color: #8feeff;
+}
+
+.fallback-text {
+    text-align: center;
 }
 
 .places {
@@ -62,21 +84,26 @@ header img {
     align-items: center;
     gap: 1.5rem;
     padding-left: 0rem !important;
+    list-style: none;
     
 
 }
 
 .place-item {
-    list-style: none;
-    border-radius: 1rem;
-    object-fit: cover;
-    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background: #1f1c2c;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    animation: slide-up-fade-in 0.3s ease-out forwards;
 }
 
 .place-item button {
-    background: var(--color-1);;
+    background: transparent;
     border: none;
-    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+    /* padding: 1rem; */
 }
 
 .place-item h3 {
@@ -97,6 +124,6 @@ header img {
     .places {
         max-width: 100%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     }
 }
