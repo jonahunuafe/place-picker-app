@@ -8,7 +8,6 @@ body {
 }
 
 header {
-    outline: 1px solid green;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +18,25 @@ header {
 
 header img {
     width: 10%;
-    /* margin: auto; */
+    
 }
 
+.places-category {
+    width: 90%;
+    margin: auto;
+}
+
+.places {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0rem !important;
+}
+
+.place-item {
+    list-style: none;
+}
+
+.place-item img {
+    width: 100%;
+}
